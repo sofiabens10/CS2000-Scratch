@@ -19,3 +19,12 @@ fun tshirt-cost(amount :: Number, message :: String) -> Number:
   (amount * CPS) + (string-length(message) * CPL)
 end
  
+fun nm-square(n :: Number) -> Number:
+  doc: "Multiplies the input by itself"
+  n * n
+
+where:
+  nm-square(-1) is 1
+  nm-square(0) is 0
+  nm-square(2) is 4
+end
