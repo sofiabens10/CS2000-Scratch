@@ -65,3 +65,4 @@ end
 only-forest = filter-with(table, is-forest)
 d = order-by(only-forest, "date", true)
 get-row(d, 0)
+
