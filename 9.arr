@@ -12,14 +12,14 @@ fun apply-discounts(t :: Table) -> Table:
     if price < 100: price * 0.8 else: price end
   end)
 where:
-  test-table =
+  teste =
     table: price
       row: 50
       row: 120
       row: 80
       row: 40
     end
-  apply-discounts(test-table) is
+  apply-discounts(teste) is
   table: price
     row: 50 * 0.8
     row: 120
@@ -54,8 +54,14 @@ end
 
 prices-with-tax = build-column(prices, "Tax", add-tax)
 
-fun obs(item :: Number) -> String:
-  string-repeat("X", num-length(item))
+fun obs(item :: String) -> String:
+  doc: "obfuscates a string by replacing each character with 'X'"
+  string-repeat("X", string-length(item))
 end
-transform-column(prices, "price", obs)
- 
+
+test-table = table: item
+  row: "apple"
+  row: "cat"
+end
+
+obfuscated = transform-column(test-table, "item", obs)
