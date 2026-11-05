@@ -19,9 +19,9 @@ fun guess(, key :: String) -> :
   end
 end
 
-fun draw-display(guesses :: Number) -> Image:
+fun draw-display(g :: Game) -> Image:
   doc: "displays the guesses on the grid and/or displays an empty grid if the game just started"
-  if guess == 0:
+  if g.guesses == 0:
     initial-grid
   else:
     # 
@@ -29,7 +29,7 @@ fun draw-display(guesses :: Number) -> Image:
 draw-display(0)
 
 wordle-reactor = reactor:
-  init: initial-grid,
+    init: game(string, ,
     to-draw: draw-display,
     on-key: 
 end
