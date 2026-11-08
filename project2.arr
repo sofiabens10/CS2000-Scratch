@@ -29,7 +29,7 @@ fun draw-display(g :: Game) -> Image:
 draw-display(0)
 
 wordle-reactor = reactor:
-    init: game(string, ,
+    init: game,
     to-draw: draw-display,
     on-key: 
 end
